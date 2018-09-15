@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单</title>
+		<link rel="stylesheet" href="css/test01.css" />
+		<!--<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>-->
+		
+	</head>
+	<body>
+		<form action="#" method="get">
+			<fieldset class="field">
+				<legend>基本信息</legend>
+				姓名&nbsp;<input type="text" name="name" required="required"/>&nbsp;<span>*</span><br/>
+				年龄&nbsp;<input type="text" name="age"/><br/>
+			</fieldset><br/>
+			
+			<fieldset class="field">
+				<legend>你想在哪里收到邮件？</legend>
+				邮箱&nbsp;<input type="search" placeholder="请输入邮箱" list="list" required="required" id="email" oninput="add()" value=""/>&nbsp;<span>*</span>
+				<datalist id="list">
+					<option><p></p>@qq.com</option>
+					<option><p></p>@163.com</option>
+					<option><p></p>@gmail.com</option>
+					<option><p></p>@yahoo.com.cn</option>
+					<option><p></p>@126.com</option>
+				</datalist>
+			</fieldset><br/>
+			
+			<fieldset class="field">
+				<legend>收入情况</legend>
+				月收入&nbsp;<input type="number" name="income" min="0" value="20000"/><br/>
+				银行卡&nbsp;<input type="text" name="card" />
+				有效期&nbsp;<input type="date" name="date" />
+			</fieldset><br/>
+			
+			<fieldset class="field">
+				<legend>选取提交文件</legend>
+				文件&nbsp;<input type="file" name="file" />				
+			</fieldset><br/>
+			
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+	<script type="text/javascript" src="js/test01.js" ></script>
+</html>
