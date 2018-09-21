@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<fieldset>
+			<legend>页面换肤</legend>
+			<div id="colors">
+				<span id="c1"></span>
+				<span id="c2"></span>
+				<span id="c3"></span>
+				<span id="c4"></span>
+				<span id="c5"></span>
+				<span id="c6"></span>
+			</div>
+			<p id="content">
+				如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般如此这般
+			</p>
+		</fieldset>
+	</body>
+</html>
+<script>
+	window.onload = function(){
+		var content = document.getElementById('content');
+		var c1 = document.getElementById('c1');
+		var c2 = document.getElementById('c2');
+		var c3 = document.getElementById('c3');
+		var c4 = document.getElementById('c4');
+		var c5 = document.getElementById('c5');
+		var c6 = document.getElementById('c6');		
+		c1.onclick = function(){
+			content.style.backgroundColor = 'lightgray';
+			if(c2.style.marginTop !== '8px')  c2.style.marginTop = '8px';
+			if(c3.style.marginTop !== '8px')  c3.style.marginTop = '8px';
+			if(c4.style.marginTop !== '8px')  c4.style.marginTop = '8px';
+			if(c5.style.marginTop !== '8px')  c5.style.marginTop = '8px';
+			if(c6.style.marginTop !== '8px')  c6.style.marginTop = '8px';
+			c1.style.marginTop = '3px';
+			localStorage.setItem('color','lightgray');
+		}
+		c2.onclick = function(){
+			content.style.backgroundColor = 'deepskyblue';
+			if(c1.style.marginTop !== '8px')  c1.style.marginTop = '8px';
+			if(c3.style.marginTop !== '8px')  c3.style.marginTop = '8px';
+			if(c4.style.marginTop !== '8px')  c4.style.marginTop = '8px';
+			if(c5.style.marginTop !== '8px')  c5.style.marginTop = '8px';
+			if(c6.style.marginTop !== '8px')  c6.style.marginTop = '8px';
+			c2.style.marginTop = '3px';
+			localStorage.setItem('color','deepskyblue');
+		}
+		c3.onclick = function(){
+			content.style.backgroundColor = 'greenyellow';
+			if(c1.style.marginTop !== '8px')  c1.style.marginTop = '8px';
+			if(c2.style.marginTop !== '8px')  c2.style.marginTop = '8px';
+			if(c4.style.marginTop !== '8px')  c4.style.marginTop = '8px';
+			if(c5.style.marginTop !== '8px')  c5.style.marginTop = '8px';
+			if(c6.style.marginTop !== '8px')  c6.style.marginTop = '8px';
+			c3.style.marginTop = '3px';
+			localStorage.setItem('color','greenyellow');
+		}
+		c4.onclick = function(){
+			content.style.backgroundColor = 'red';
+			if(c1.style.marginTop !== '8px')  c1.style.marginTop = '8px';
+			if(c3.style.marginTop !== '8px')  c3.style.marginTop = '8px';
+			if(c2.style.marginTop !== '8px')  c2.style.marginTop = '8px';
+			if(c5.style.marginTop !== '8px')  c5.style.marginTop = '8px';
+			if(c6.style.marginTop !== '8px')  c6.style.marginTop = '8px';
+			c4.style.marginTop = '3px';
+			localStorage.setItem('color','red');
+		}
+		c5.onclick = function(){
+			content.style.backgroundColor = 'mediumpurple';
+			if(c1.style.marginTop !== '8px')  c1.style.marginTop = '8px';
+			if(c3.style.marginTop !== '8px')  c3.style.marginTop = '8px';
+			if(c4.style.marginTop !== '8px')  c4.style.marginTop = '8px';
+			if(c2.style.marginTop !== '8px')  c2.style.marginTop = '8px';
+			if(c6.style.marginTop !== '8px')  c6.style.marginTop = '8px';
+			c5.style.marginTop = '3px';
+			localStorage.setItem('color','mediumpurple');
+		}
+		c6.onclick = function(){
+			content.style.backgroundColor = 'sandybrown';
+			if(c1.style.marginTop !== '8px')  c1.style.marginTop = '8px';
+			if(c3.style.marginTop !== '8px')  c3.style.marginTop = '8px';
+			if(c4.style.marginTop !== '8px')  c4.style.marginTop = '8px';
+			if(c2.style.marginTop !== '8px')  c2.style.marginTop = '8px';
+			if(c5.style.marginTop !== '8px')  c5.style.marginTop = '8px';
+			c6.style.marginTop = '3px';
+			localStorage.setItem('color','sandybrown');
+		}
+		var color = localStorage.getItem('color');
+		content.style.backgroundColor = color;
+		if(color==='lightgray')c1.style.marginTop = '3px';
+		if(color==='deepskyblue')c2.style.marginTop = '3px';
+		if(color==='greenyellow')c3.style.marginTop = '3px';
+		if(color==='red')c4.style.marginTop = '3px';
+		if(color==='mediumpurple')c5.style.marginTop = '3px';
+		if(color==='sandybrown')c6.style.marginTop = '3px';
+	}
+</script>
+<style>
+	#content{
+		background-color: lightgray;
+	}
+	legend{
+		color: red;
+	}
+	fieldset{
+		width: 300px;;
+	}
+	#colors{
+		width: 250px;
+		height: 30px;
+		border: black 1px solid;
+	}
+	#content{
+		width: 250px;
+	}
+	span{
+		display: block;
+		width: 15px;
+		height: 15px;
+		float: left;
+		margin-left: 10px;
+	}
+	#c1{
+		margin-top: 8px;
+		background-color: lightgray;
+	}
+	#c2{
+		margin-top: 8px;
+		background-color: deepskyblue;
+	}
+	#c3{
+		margin-top: 8px;
+		background-color: greenyellow;
+	}
+	#c4{
+		margin-top: 8px;
+		background-color: red;
+	}
+	#c5{
+		margin-top: 8px;
+		background-color: mediumpurple;
+	}
+	#c6{
+		margin-top: 8px;
+		background-color: sandybrown;
+	}
+</style>
