@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			border: black 1px solid;
+			width: 180px;
+			height: 180px;
+			padding: 5px;;
+		}
+	</style>
+	<body>
+		<h3>上传头像</h3>
+		<div id="img"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	if(typeof FileReader === 'undefined'){
+		document.getElementById(img).innerHTML = '<p>您的浏览器不支持FileReader</p>'
+	}
+	document.ondragover = function(e){
+		e.preventDefault();
+	}
+	document.ondrop = function(e){
+		e.preventDefault();
+	}
+	img.ondragover = function(e){
+		e.preventDefault();
+	}
+	img.ondrop = function(e){
+		e.preventDefault();
+		var reader = new FileReader();
+		var file = e.dataTransfer.files[0];
+		reader.readAsDataURL(file);
+		reader.onload = function(){
+			e.target.innerHTML = "<img src = '" + this.result + "' />"
+		}
+		
+	}
+	
+</script>
