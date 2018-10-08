@@ -7,6 +7,18 @@
 		<!--<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>-->
 		
 	</head>
+	<style type="text/css">
+		.field{
+			width: 450px;
+		}
+		legend{
+			color: red;
+		}
+		span{
+			color: red;
+		}
+
+	</style>
 	<body>
 		<form action="#" method="get">
 			<fieldset class="field">
@@ -42,5 +54,15 @@
 			<input type="submit" value="提交"/>
 		</form>
 	</body>
-	<script type="text/javascript" src="js/test01.js" ></script>
+	<script type="text/javascript">
+		function add(){
+			var p = document.getElementsByTagName('p');
+			var email = document.getElementById('email');
+			for(var i = 0;i<p.length;i++)
+			{
+				p[i].innerHTML = email.value;
+			}
+
+		}
+	</script>
 </html>
