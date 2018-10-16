@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>七巧板</title>
+	</head>
+	<style type="text/css">
+		canvas{
+			border: #ccc 1px solid;
+		}
+	</style>
+	<body>
+		<canvas id="cv" width="400" height="400">
+			您的浏览器不支持canvas元素
+		</canvas>
+		<script>
+			var cv = document.getElementById('cv');
+			var ct = cv.getContext('2d');
+			ct.beginPath();
+			ct.moveTo(0,0);
+			ct.lineTo(200,200);
+			ct.lineTo(400,0);
+			ct.fillStyle = 'greenyellow';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+			
+			ct.beginPath();
+			ct.moveTo(0,0);
+			ct.lineTo(200,200);
+			ct.lineTo(0,400);
+			ct.fillStyle = 'dodgerblue';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+			
+			ct.beginPath();
+			ct.moveTo(200,200);
+			ct.lineTo(300,300);
+			ct.lineTo(300,100);
+			ct.fillStyle = 'yellow';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+			
+			ct.beginPath();
+			ct.moveTo(400,0);
+			ct.lineTo(300,100);
+			ct.lineTo(300,300);
+			ct.lineTo(400,200);
+			ct.fillStyle = 'red';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+			
+			ct.beginPath();
+			ct.moveTo(200,200);
+			ct.lineTo(300,300);
+			ct.lineTo(200,400);
+			ct.lineTo(100,300);
+			ct.fillStyle = 'mediumpurple';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+			
+			ct.beginPath();
+			ct.moveTo(100,300);
+			ct.lineTo(0,400);
+			ct.lineTo(200,400);
+			ct.fillStyle = 'deeppink';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+			
+			ct.beginPath();
+			ct.moveTo(400,200);
+			ct.lineTo(200,400);
+			ct.lineTo(400,400);
+			ct.fillStyle = 'burlywood';
+			ct.fill();
+		//	ct.stroke();
+			ct.closePath();
+		</script>
+	</body>
+</html>
