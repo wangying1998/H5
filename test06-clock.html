@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>钟表</title>
+	</head>
+	<style type="text/css">
+		canvas{
+			border: red 1px solid;
+		}
+	</style>
+	<body>
+		<canvas id="cv" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			var cv = document.getElementById('cv');
+			var ct = cv.getContext('2d');
+			
+		//		ct.save();
+		//		ct.rotate(-0.5*Math.PI);
+		//		for(var i=1;i<13;i++){
+		//			ct.font = '14px 宋体';
+		//			ct.strokeStyle = 'black';
+		//			ct.strokeText(i+'',Math.cos(Math.PI*30*(i+2)/180)*105+200,
+		//			Math.sin(Math.PI*30*(i+2)/180)*105+200,5);
+		//		}
+		//		ct.restore();
+			
+			
+			function clock(){
+				ct.clearRect(0,0,cv.width,cv.height);		
+		
+				for(var i=1;i<13;i++){
+					ct.font = '14px 宋体';
+					ct.strokeText(i+'',Math.cos(Math.PI*30*(i-3)/180)*110+195,
+					Math.sin(Math.PI*30*(i-3)/180)*110+205,10);
+				}
+						
+				ct.save();
+				
+				ct.translate(200,200);
+				ct.rotate(Math.PI/6);
+				
+				ct.beginPath();
+				ct.arc(0,0,150,0,2*Math.PI);
+				ct.lineWidth = 3;
+				ct.strokeStyle = 'lawngreen';
+				ct.stroke();
+				ct.closePath();
+				
+				for(var i=1;i<=60;i++){
+					ct.fillStyle = 'black';
+					ct.fillRect(125,0,15,3);
+					ct.rotate(Math.PI/30);
+				}
+				for(var i=1;i<13;i++){		
+					ct.fillStyle = 'red';
+					ct.fillRect(120,0,20,5);
+					ct.rotate(Math.PI/6);
+				}
+				ct.beginPath();
+				ct.arc(0,0,3,0,2*Math.PI);
+				ct.closePath();
+				ct.stroke();
+				
+				ct.restore();
+				
+				
+				
+						
+				var date = new Date();
+				var h = date.getHours()%12;
+				var m = date.getMinutes()%60;
+				var s = date.getSeconds()%60;
+				
+		
+		
+				// 时针
+				ct.save();
+				ct.translate(200,200);
+				ct.rotate(h*Math.PI/6);
+				ct.beginPath();
+				ct.moveTo(0,0);
+				ct.lineTo(0,-80);
+				ct.strokeStyle = 'purple';
+				ct.lineWidth = 5;
+				ct.stroke();
+				ct.closePath();
+				ct.restore();	
+				//分针
+				ct.save();
+				ct.translate(200,200);
+				ct.rotate(m*Math.PI/30);
+				ct.beginPath();
+				ct.moveTo(0,0);
+				ct.lineTo(0,-100);
+				ct.strokeStyle = 'blue';
+				ct.lineWidth = 3;
+				ct.stroke();
+				ct.closePath();
+				ct.restore();		
+				//秒针
+				ct.save();
+				ct.beginPath();
+				ct.translate(200,200);
+				ct.rotate(s*Math.PI/30);
+				
+				ct.beginPath();
+				ct.arc(0,0,2,0,2*Math.PI);
+				ct.fillStyle = 'red';
+				ct.fill();
+				ct.closePath();
+				ct.beginPath();
+				ct.arc(0,-100,2,0,2*Math.PI);
+				ct.fillStyle = 'red';
+				ct.fill();
+				ct.closePath();
+				
+				ct.moveTo(0,0);
+				ct.lineTo(0,-115);
+				ct.strokeStyle = 'red';
+				ct.lineWidth = 2;
+				ct.stroke();
+				ct.closePath();
+				ct.restore();		
+			}
+				
+			setInterval(clock,1000);
+			clock();
+			
+		</script>
+	</body>
+</html>
